@@ -1,7 +1,7 @@
 import audioop
 import wave
 import numpy as np
-import scipy
+# import scipy
 import random
 import string
 from models import sound
@@ -76,7 +76,7 @@ def generate(filename, target, base):
             code += str(numblocks)+','
 
         # Create tone
-        x = scipy.cos((2*scipy.pi*f/fs)*scipy.arange(fs*T))
+        x = np.cos((2*np.pi*f/fs)*np.arange(fs*T))
 
         for i, value in enumerate(x):
             if (start + i) < len(data):
