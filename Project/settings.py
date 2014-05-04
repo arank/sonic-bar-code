@@ -63,7 +63,7 @@ USE_TZ = True
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
 
-MEDIA_ROOT = '~/apps/django/django_projects/Project/sonic_bar_code/static/'
+MEDIA_ROOT = '/home/bitnami/apps/django/django_projects/Project/sonic_bar_code/static/'
 # MEDIA_ROOT = "C:/Users/Aran/Dropbox/CS Share/whisperapp/backend/sonic_bar_code/sonic_bar_code/static/"
 MEDIA_URL = '/media/'
 
@@ -72,7 +72,7 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = '/home/bitnami/apps/django/django_projects/Project/sonic_bar_code/static/'
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
@@ -119,7 +119,7 @@ ROOT_URLCONF = 'Project.urls'
 WSGI_APPLICATION = 'Project.wsgi.application'
 
 TEMPLATE_DIRS = (
-    '~/apps/django/django_projects/Project/templates',
+    '/home/bitnami/apps/django/django_projects/Project/templates',
     # 'C:/Users/Aran/Dropbox/CS Share/whisperapp/backend/sonic_bar_code/templates',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
