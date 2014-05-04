@@ -88,7 +88,7 @@ def generate(filename, target, base):
 
 
     # Create a Sndfile instance for writing wav files @ 48000 Hz
-    f = Sndfile("/home/bitnami/apps/django/django_projects/Project/sonic_bar_code/static/1.wav", 'w', format, 1, 48000)
+    f = Sndfile("~/apps/django/django_projects/Project/sonic_bar_code/static/1.wav", 'w', format, 1, 48000)
     f.write_frames(data)
     f.close()
     return code;
