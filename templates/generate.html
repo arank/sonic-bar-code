@@ -22,9 +22,9 @@ Unique sound generated for {{ url }} <br>
 
 
 <audio id="player" controls loop>
-    <source src="{{ STATIC_URL }}{{ fname }}" >
+    <source src="/Project/{{ MEDIA_URL }}{{ fname }}" >
     Your browser does not support html5 audiotag
 </audio>
 
 
-{#<embed src= "{{ STATIC_URL }}hell.wav" hidden="false" autostart="true" loop="5">#}
+{#<embed src= "/Project/{{ MEDIA_URL }}hell.wav" hidden="false" autostart="true" loop="5">#}
