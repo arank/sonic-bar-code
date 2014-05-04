@@ -51,7 +51,7 @@ def handle_uploaded_file(f):
     print 'handling uploaded file ', f
 
     #saves file as caf
-    name = '~/apps/django/django_projects/Project/sonic_bar_code/static/%s' % f
+    name = '/home/bitnami/apps/django/django_projects/Project/sonic_bar_code/static/%s' % f
     # name = 'C:/Users/Aran/Dropbox/CS Share/whisperapp/backend/sonic_bar_code/sonic_bar_code/static/%s' % f
     with open(name,  'wb+') as destination:
         for chunk in f.chunks():
@@ -105,7 +105,7 @@ def generate_view(request):
     filename = "%d.wav" %  (int(sound.objects.count()) + 1)
 
     while(True):
-    	key = generate("~/apps/django/django_projects/Project/sonic_bar_code/static/%s" % filename, target, base)
+    	key = generate("/home/bitnami/apps/django/django_projects/Project/sonic_bar_code/static/%s" % filename, target, base)
         # key = generate("C:/Users/Aran/Dropbox/CS Share/whisperapp/backend/sonic_bar_code/sonic_bar_code/static/%s" % filename, target, base)
         if check_if_same(key):
             break
