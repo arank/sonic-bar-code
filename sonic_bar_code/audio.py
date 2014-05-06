@@ -16,7 +16,7 @@ def convert(filename, name):
 
     data = f.read_frames(f.nframes)
 
-    new_name = name = '/home/bitnami/apps/django/django_projects/Project/sonic_bar_code/static/newfile.wav'
+    new_name ='/home/bitnami/apps/django/django_projects/Project/sonic_bar_code/static/newfile.wav'
     format = Format('wav')
     f = Sndfile(new_name, 'w', format, 1, fs)
     f.write_frames(data)
@@ -127,6 +127,7 @@ def find_freq(filename, target, tolerance):
 
     # play stream and find the frequency of each chunk
     while len(data) == chunk*swidth:
+        print "The count is %d." % count
         # unpack the data and times by the hamming window
         indata = np.array(wave.struct.unpack("%dh"%(len(data)/(swidth)),\
             data))*window
@@ -186,6 +187,7 @@ def find_freq(filename, target, tolerance):
         code += str(countsound)+','
     else:
         code += str(countpause)+','
+    print "returning %s.", code
     return code
 
 
