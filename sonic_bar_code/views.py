@@ -57,7 +57,7 @@ def handle_uploaded_file(f):
         for chunk in f.chunks():
             destination.write(chunk)
 
-    name = convert(name)
+    name = convert(name, f)
 
 
     returnkey = find_freq(name, target, tolerance)

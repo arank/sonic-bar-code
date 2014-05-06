@@ -8,7 +8,7 @@ from models import sound
 from scikits.audiolab import Format, Sndfile
 
 
-def convert(filename):
+def convert(filename, name):
     f = Sndfile(filename, 'r')
     fs = f.samplerate
     nc = f.channels
@@ -16,7 +16,7 @@ def convert(filename):
 
     data = f.read_frames(f.nframes)
 
-    new_name = 'newfile.wav'
+    new_name = name = '/home/bitnami/apps/django/django_projects/Project/sonic_bar_code/static/newfile.wav'
     format = Format('wav')
     f = Sndfile(new_name, 'w', format, 1, fs)
     f.write_frames(data)
