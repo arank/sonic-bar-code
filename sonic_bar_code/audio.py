@@ -130,9 +130,8 @@ def find_freq(filename, target, tolerance):
 
         print "the type is", type(data)
         print "the len is", len(data)
-        print "the adj len is", len(data);
-        print "the bool check is", data.isspace()
-        print "the data", data
+        print "the adj len is", len(data.strip())
+        print "the arr is", data.split()
 
         # unpack the data and times by the hamming window
         indata = np.array(wave.struct.unpack("%dh"%(len(data)/(swidth)),\
@@ -144,9 +143,8 @@ def find_freq(filename, target, tolerance):
         which = fftData[1:].argmax() + 1
         # use quadratic interpolation around the max
         if which != len(fftData)-1:
-            print "not yet frozen"
+            # freezing here
             y0,y1,y2 = np.log(fftData[which-1:which+2:])
-            print "WE DIDNT FREEZE"
             x1 = (y2 - y0) * .5 / (2 * y1 - y2 - y0)
             # find the frequency and output it
             thefreq = (which+x1)*RATE/chunk
