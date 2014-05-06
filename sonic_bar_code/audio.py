@@ -255,14 +255,17 @@ def match(longcode):
         print "little: ", little
 
         l_index = 0
+        # TODO SUPER IMPORTANT ENSURE BEGGINING ISNT THE INDICATOR BLOCK
+        # start_index = start[0]+1
+        start_index = start[0]+1
 
-        end = start[0]+1 + len(little)
+        end = start_index + len(little)
         if end > len(numbers):
             end = len(numbers)
 
 
-        print start[0]+1, " ", start[0] + len(little)
-        for i in range(start[0]+1, end ):
+        print start_index, " ", start[0] + len(little)
+        for i in range(start_index, end ):
 
             #print 'little[l_index] ', int(little[l_index])
             #print 'numbers[i] ', int(numbers[i])
