@@ -128,14 +128,15 @@ def find_freq(filename, target, tolerance):
     # play stream and find the frequency of each chunk
     while len(data) == chunk*swidth:
 
-        print "the type is", type(data)
-        print "the len is", len(data)
-        print "the adj len is", len(data.strip())
-        print "the arr is", data.split()
-
         # unpack the data and times by the hamming window
         indata = np.array(wave.struct.unpack("%dh"%(len(data)/(swidth)),\
             data))*window
+
+        print "array is", indata
+        if(all(v == 0 for v in indata)):
+            print "we should break here"
+        if(all(indata==0))
+            print "we should break here"
 
         # Take the fft and square each value
         fftData=abs(np.fft.rfft(indata))**2
