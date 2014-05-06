@@ -257,7 +257,7 @@ def match(longcode):
         l_index = 0
         # TODO SUPER IMPORTANT ENSURE BEGGINING ISNT THE INDICATOR BLOCK
         # start_index = start[0]+1
-        start_index = start[0]+1
+        start_index = start[0]
 
         end = start_index + len(little)
         if end > len(numbers):
@@ -270,7 +270,7 @@ def match(longcode):
             #print 'little[l_index] ', int(little[l_index])
             #print 'numbers[i] ', int(numbers[i])
             try:
-                diff = int(little[l_index]) - int(numbers[i])
+                diff = abs(int(little[l_index]) - int(numbers[i]))
             except ValueError:
                 diff = 5
             if diff < 2:
