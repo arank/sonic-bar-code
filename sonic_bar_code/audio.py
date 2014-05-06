@@ -238,8 +238,8 @@ def match(longcode):
     for i, n in enumerate(numbers):
         try:
             # TODO SUPER IMPORTANT CHECK FOR BEGGINING LARGE num not just 0
-            # if int(n) > 15:
-            if int(n) > 0:
+            if int(n) >= 15:
+            # if int(n) > 0:
                 start.append(i)
         except ValueError:
             pass
@@ -257,8 +257,8 @@ def match(longcode):
 
         l_index = 0
         # TODO SUPER IMPORTANT ENSURE BEGGINING ISNT THE INDICATOR BLOCK
-        # start_index = start[0]+1
-        start_index = start[0]
+        start_index = start[0]+1
+        # start_index = start[0]
 
         end = start_index + len(little)
         if end > len(numbers):
