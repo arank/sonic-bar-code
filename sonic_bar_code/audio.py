@@ -132,11 +132,9 @@ def find_freq(filename, target, tolerance):
         indata = np.array(wave.struct.unpack("%dh"%(len(data)/(swidth)),\
             data))*window
 
-        print "array is", indata
         if(all(v == 0 for v in indata)):
-            print "we should break here"
-        if(all(indata==0))
-            print "we should break here"
+            print "breaking on zero indata array"
+            break
 
         # Take the fft and square each value
         fftData=abs(np.fft.rfft(indata))**2
