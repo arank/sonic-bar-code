@@ -18,7 +18,8 @@ def convert(filename, name):
 
     new_name ='/home/bitnami/apps/django/django_projects/Project/sonic_bar_code/static/newfile.wav'
     format = Format('wav')
-    f = Sndfile(new_name, 'w', format, 1, fs)
+    # f = Sndfile(new_name, 'w', format, 1, fs)
+    f = Sndfile(new_name, 'w', format, nc, fs)
     f.write_frames(data)
     f.close()
 
