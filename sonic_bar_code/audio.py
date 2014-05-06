@@ -132,7 +132,7 @@ def find_freq(filename, target, tolerance):
         indata = np.array(wave.struct.unpack("%dh"%(len(data)/(swidth)),\
             data))*window
 
-        print "not frozen on this", idata
+        print "not frozen on this", indata
         # Take the fft and square each value
         fftData=abs(np.fft.rfft(indata))**2
         # find the maximum
