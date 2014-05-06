@@ -127,8 +127,9 @@ def find_freq(filename, target, tolerance):
 
     # play stream and find the frequency of each chunk
     while len(data) == chunk*swidth:
-        print "the length is", len(data)
-        print "the count is", count
+
+        print "the type is", type(data)
+        print "the data is", data
 
         # unpack the data and times by the hamming window
         indata = np.array(wave.struct.unpack("%dh"%(len(data)/(swidth)),\
@@ -136,16 +137,10 @@ def find_freq(filename, target, tolerance):
 
         # Take the fft and square each value
         fftData=abs(np.fft.rfft(indata))**2
-
-        print "not frozen on this one", fftData
-
         # find the maximum
         which = fftData[1:].argmax() + 1
-
-        print "nor this one", which
         # use quadratic interpolation around the max
         if which != len(fftData)-1:
-            print "nor at this point 1"
             y0,y1,y2 = np.log(fftData[which-1:which+2:])
             x1 = (y2 - y0) * .5 / (2 * y1 - y2 - y0)
             # find the frequency and output it
@@ -167,7 +162,6 @@ def find_freq(filename, target, tolerance):
                     issound = False
 
         else:
-            print "nor at this point 3"
             thefreq = which*RATE/chunk
             print count , "The freq is %f Hz." % (thefreq)
             if thefreq > target-tolerance and thefreq < target+tolerance*2:
@@ -191,6 +185,7 @@ def find_freq(filename, target, tolerance):
         data = wf.readframes(chunk)
         # read some data5
         if wf.getnchannels() == 2:
+            print "audiooping data", data
             data = audioop.tomono(data, swidth, .5, .5)
     if len(code) % 2 == 0:
         code += str(countsound)+','
