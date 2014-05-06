@@ -40,10 +40,10 @@ def upload_file(request):
     else:
         form = UploadFileForm()
 
-    return HttpResponse('err')
-#    return render_to_response('upload.html',
-#            {'form': form},
-#            context_instance=RequestContext(request))
+#    return HttpResponse('err')
+    return render_to_response('upload.html',
+            {'form': form},
+            context_instance=RequestContext(request))
 
 @csrf_exempt
 def handle_uploaded_file(f):
