@@ -127,11 +127,12 @@ def find_freq(filename, target, tolerance):
 
     # play stream and find the frequency of each chunk
     while len(data) == chunk*swidth:
-        print "The count is %d." % count
+        print "unpacking data", data
         # unpack the data and times by the hamming window
         indata = np.array(wave.struct.unpack("%dh"%(len(data)/(swidth)),\
             data))*window
 
+        print "not frozen on this", idata
         # Take the fft and square each value
         fftData=abs(np.fft.rfft(indata))**2
         # find the maximum
