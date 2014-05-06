@@ -236,12 +236,16 @@ def match(longcode):
     start = []
     for i, n in enumerate(numbers):
         try:
-            if int(n) > 15:
+            # TODO SUPER IMPORTANT CHECK FOR BEGGINING LARGE num not just 0
+            # if int(n) > 15:
+            if int(n) > 0:
                 start.append(i)
         except ValueError:
             pass
 
     print "start: ", start
+    if(len(start) == 0):
+        return 'err'
 
 
     for s in sound.objects.all():
